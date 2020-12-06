@@ -1,3 +1,10 @@
+<?php
+/*
+ *
+ * Template Name: Home Template
+ *
+ */
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -6,19 +13,16 @@
 </head>
 
 <body>
-
     <?php get_template_part( 'includes/nav') ?>
 
-
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/home-bg.jpg')">
+  <header class="masthead" style="background-image: url('<?php the_post_thumbnail_url(); ?>">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>商品一覧</h1>
-            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+            <h1><?php the_title(); ?></h1>
           </div>
         </div>
       </div>
@@ -45,18 +49,11 @@
             </div>
             <hr>
             <?php endwhile; ?>
-
-        <!-- Pager -->
-        <div class="clearfix">
-            <?php echo paginate_links(); ?>
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-        </div>
       </div>
     </div>
   </div>
 
   <hr>
-
   <?php get_template_part('includes/footer') ?>
 
   <?php get_footer(); ?>
